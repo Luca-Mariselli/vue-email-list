@@ -17,12 +17,15 @@ createApp({
         return {
            mailGenerata: ``, 
            email: [],
+           indirizzo: `https://flynn.boolean.careers/exercises/api/random/mail`
         }
     },
     
     methods: {
         getMail(i){
-            axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then((r) =>{
+            axios.get(this.indirizzo).then((r) =>{
+                let codiceRisposta = `${r.status}/${r.statusText}`;
+                console.log(codiceRisposta)
                 let mailGenerata = r.data.response
                 console.log(mailGenerata)
                 this.email.push(mailGenerata)
