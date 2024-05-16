@@ -12,8 +12,8 @@
 
     <div id="app">
         <h1>Vue email list</h1>
-        <div  v-for = "mail in email">
-            <p>{{mail}}</p>
+        <div v-if="this.email.length >= 10">
+            <p v-for = "mail in email">{{mail}}</p>
         </div>
     
 

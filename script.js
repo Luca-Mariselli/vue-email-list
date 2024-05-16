@@ -17,15 +17,13 @@ createApp({
         return {
            mailGenerata: ``, 
            email: [],
-           indirizzo: `https://flynn.boolean.careers/exercises/api/random/mail`
+           indirizzo: `https://flynn.boolean.careers/exercises/api/random/mail`,
         }
     },
     
     methods: {
         getMail(i){
             axios.get(this.indirizzo).then((r) =>{
-                let codiceRisposta = `${r.status}/${r.statusText}`;
-                console.log(codiceRisposta)
                 let mailGenerata = r.data.response
                 console.log(mailGenerata)
                 this.email.push(mailGenerata)
@@ -33,9 +31,10 @@ createApp({
         },
 
         myCycleFor(){
-            for (let i = 0; i < 10; i++)
+            for (let i = 0; i < 10; i++){
                 this.getMail(i)
-                console.log(this.email)
+                console.log(this.numeroMail)
+            }
         }
     },
 
