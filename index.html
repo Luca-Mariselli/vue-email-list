@@ -12,9 +12,11 @@
 
     <div id="app">
         <h1>Vue email list</h1>
-        <div v-if="this.email.length >= 10">
+        <div v-if="this.email.length >= this.numeroMailGen">
             <p v-for = "mail in email">{{mail}}</p>
         </div>
+        <input id="input" v-model="message" placeholder="edit me" />
+        <button @click="this.myCycleFor()">Trova mail</button>
     
 
     </div>

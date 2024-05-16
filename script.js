@@ -18,6 +18,7 @@ createApp({
            mailGenerata: ``, 
            email: [],
            indirizzo: `https://flynn.boolean.careers/exercises/api/random/mail`,
+           numeroMailGen: ``
         }
     },
     
@@ -29,9 +30,10 @@ createApp({
                 this.email.push(mailGenerata)
             })
         },
-
-        myCycleFor(){
-            for (let i = 0; i < 10; i++){
+        
+        myCycleFor(numero){
+            this.numeroMailGen = document.getElementById(`input`).value 
+            for (let i = 0; i < this.numeroMailGen; i++){
                 this.getMail(i)
                 console.log(this.numeroMail)
             }
@@ -40,7 +42,6 @@ createApp({
 
     mounted(){
         console.log(`Benvenuto`)
-        this.myCycleFor();
     }
 
 }).mount('#app')
